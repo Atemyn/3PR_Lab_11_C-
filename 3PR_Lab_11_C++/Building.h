@@ -48,6 +48,49 @@ public:
 	{
 		return countOfBuildings;
 	}
+
+	static void array1Forming(Building* array, int n)
+	{
+		char adr[] = "NONE";
+		for (int i = 1; i < n + 1; i++)
+		{
+			array[i - 1].setBuilding("Жилое здание", adr, (float)i, (float)i, (float)i, i, i, i);
+		}
+	}
+
+	static void array2Forming(Building** array, int n, int m)
+	{
+		char adr[] = "NONE";
+		for (int i = 1; i < n + 1; i++)
+		{
+			for (int j = 1; j < m + 1; j++)
+			{
+				array[i - 1][j - 1].setBuilding("Жилое здание", adr, (float)(i+j), (float)(i+j), (float)(i+j), i+j, i+j, i+j);
+			}
+		}
+	}
+
+	static void array1Output(Building* array, int n)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			cout << array[i].sideLength << " ";
+		}
+		cout << endl << endl;
+	}
+
+	static void array2Output(Building** array, int n, int m)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < m; j++)
+			{
+				cout << array[i][j].sideLength << " ";
+			}
+			cout << endl;
+		}
+		cout << endl << endl;
+	}
 	// Конструктор без параметров.
 	Building()
 	{
